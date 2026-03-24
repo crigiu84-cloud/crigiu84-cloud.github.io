@@ -1,58 +1,70 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    text-align: center;
+    font-family: Arial; /* imposta il font del testo su Arial */
+    color: white; /* imposta il colore del testo su bianco */
+    background: linear-gradient(135deg, #a71603, #ff3300, #ff7c02); /* sfondo con sfumatura diagonale rosso-arancione */
 }
 
-.header {
-    background-color: #2d7a77;
-    color: white;
-    padding: 40px;
+body > h1 {
+    text-align: center; /* centra il testo dell'h1 orizzontalmente */
 }
 
-.galleria {
-    padding: 20px;
+/* contenitore */
+.container {
+    display: flex; /* usa flexbox per organizzare le card in fila */
+    gap: 20px; /* spazio di 20px tra le card */
+    justify-content: center; /* centra le card orizzontalmente */
+    margin-top: 50px; /* distanza di 50px dal bordo superiore della pagina */
 }
 
-.immagini {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+a {
+    text-decoration: none; /* rimuove la sottolineatura dai link */
+    color: inherit; /* mantiene lo stesso colore del testo padre */
 }
 
-.immagini img {
-    width: 200px;
-    height: 150px;
-    border-radius: 10px;
+.card {
+    position: relative; /* necessario per posizionare overlay assoluto sopra la card */
+    width: 200px; /* larghezza della card */
+    height: 200px; /* altezza della card */
+    background: linear-gradient(135deg, #0d2f6d, #144aaf, #1a5edd); /* sfondo della card con sfumatura blu */
+    border-width: 2px;      /* spessore del bordo */
+    border-style: solid;    /* tipo di bordo: solido */
+    border-color: black;    /* colore del bordo */
+    border-radius: 30px; /* arrotonda gli angoli della card */
+
+    display: flex; /* usa flexbox per organizzare il contenuto della card */
+    flex-direction: column; /* allinea gli elementi verticalmente */
+    justify-content: flex-start; /* posiziona gli elementi in alto */
+    align-items: center; /* centra gli elementi orizzontalmente */
+
+    padding-top: 10px; /* spazio interno sopra il contenuto */
+    cursor: pointer; /* cambia il cursore in mano quando si passa sopra */
+    overflow: hidden; /* nasconde tutto ciò che esce dai bordi della card */
 }
 
-.liste {
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
+/* titolo */
+.card h3 {
+    z-index: 1; /* porta il titolo sopra altri elementi, come l'overlay */
 }
 
-.azioni {
-    padding: 30px;
+/* overlay nascosto */
+.overlay {
+    position: absolute; /* posiziona l'overlay sopra la card */
+    width: 100%; /* l'overlay occupa tutta la larghezza della card */
+    height: 100%; /* l'overlay occupa tutta l'altezza della card */
+    background: linear-gradient(135deg, #113496, #1343c9, #0a49f5); /* sfondo dell'overlay con sfumatura blu */
+    color: white; /* colore del testo dell'overlay */
+
+    display: flex; /* usa flexbox per centrare il contenuto */
+    align-items: center; /* centra verticalmente il testo */
+    justify-content: center; /* centra orizzontalmente il testo */
+    text-align: center; /* allinea il testo al centro */
+    margin-left: 10px; /* spazio interno a sinistra */
+    margin-right: 10px; /* spazio interno a destra */
+
+    opacity: 0; /* overlay nascosto di default */
+    transition: 0.3s; /* effetto di transizione graduale quando cambia l'opacità */
 }
 
-.btn {
-    background-color: #2d7a77;
-    color: white;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 5px;
-}
-
-.btn:hover {
-    background-color: #1e5250;
-}
-
-.footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    margin-top: 40px;
+.card:hover .overlay {
+    opacity: 1; /* rende visibile l'overlay quando si passa con il mouse sulla card */
 }
