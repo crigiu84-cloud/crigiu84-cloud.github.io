@@ -50,6 +50,23 @@ body {
     background-color: #1e5250;
 }
 
+.btn-container {
+    display: flex;
+    justify-content: space-between; /* btn-left a sinistra, btn-right a destra */
+    margin: 20px 0;
+}
+
+#btn-left, #btn-right {
+    font-weight: bold;
+    background-color: #ffffff;
+    color: #1e5250;
+    padding: 10px 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
 .footer {
     background-color: #333;
     color: white;
