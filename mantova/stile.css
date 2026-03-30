@@ -1,52 +1,58 @@
-header nav ul {
-    background-color: lightgreen;
-    padding: 10px;
-}
-
-header nav ul li a {
-    color: red;
-    font-weight: bold;
-}
-
-#storia .primopiano {
-    color: blue;
-}
-
-#storia .secondopiano {
-    color: magenta;
-}
-
-#monumenti p {
-    color: blue;
-}
-
-article p.evidenziato {
-    background-color: #87CEFA;
-    color: blue;
-    padding: 5px;
-}
-
-article p.evidenziato a {
-    background-color: #FFFACD;
-    color: blue;
-}
-
-figure figcaption {
-    background-color: lightgrey;
-    margin-top: 5px;
-    padding: 2px;
-}
-
-footer p {
-    border-top: 1px solid #ccc;
-    color: #333;
-}
-
-#navSezione{
-    background-color:lightgreen;
+li {
+    background-color: greenyellow;
     color:blue;
 }
- 
-#navSezione a {
-    color: red;
+h2 + p {
+    color: rgb(0, 60, 255);
+}
+#storia p+p {
+    color:deeppink;
+}
+
+#monumenti h3+p {
+    background-color:cyan ;
+}
+
+article p a {
+    background-color:rgb(240, 239, 228);
+}
+
+article figcaption {
+    background-color: darkcyan;
+}
+
+li a {
+    color:red;
+    
+}
+
+li a:hover {
+    color:black;
+}
+
+article p a:hover {
+    color:red;
+    font-size: 20px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between; /* btn-left a sinistra, btn-right a destra */
+    margin: 20px 0;
+}
+
+#btn-left, #btn-right {
+    font-weight: bold;
+    background-color: #ffffff;
+    color: rgb(0, 17, 255);
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
 }

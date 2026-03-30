@@ -8,43 +8,89 @@
 </head>
 <body>
   <h1>portfolio di tutti i miei progetti HTML,CSS,JAVASCRYPT</h1>
-  <div class="container">
+  <nav id="nav-principale">
+    <ul>
+        <li><a href="#about" class="nav-link">Chi sono</a></li>
+        <li><a href="#competenze" class="nav-link">Competenze</a></li>
+        <li><a href="#progetti" class="nav-link">Progetti</a></li>
+        <li><a href="contatti.html" class="nav-link">Contatti</a></li>
+    </ul>
+  </nav>
 
-    <a href="/primoSito/index.html">
-    <div class="card">
-      <h3>Orario Scolastico</h3>
-        <div class="overlay">
-            <p>Questo progetto visualizza l'orario scolasticodella 4C informatica</p>
-        </div>
-    </div>
-    </a>
+  <header class="hero">
+    <h1>Giuseppe Salvatore Statella</h1>
+    <p class="hero-intro">
+        Sviluppatore web junior in formazione. Sto imparando HTML, CSS e JavaScript
+        costruendo questo portfolio passo dopo passo.
+    </p>
+    <a href="#progetti" class="btn">Guarda i miei progetti</a>
+  </header>
 
-    <a href="/mantova/index.html">
-    <div class="card">
-      <h3>Mantova</h3>
-        <div class="overlay">
-            <p>questo è un esercizio per applicare il CSS in un html già fatto</p>
-        </div>
-    </div>
-    </a>
+  <section id="about" class="sezione">
+    <h2>Chi sono</h2>
+    <p>Sono uno studente di 4 superiore che me la cavo con la programmazione anche se mi piace più 
+      cybersecurity.
+    </p>
+    <p>Mi piace suonare la chitarra, ascoltare musica soprattutto l'indie rock e il mio gruppo preferito sono gli arctic monkeys</p>
+    <blockquote>
+        <p>Tre cose solamente m'ènno in grado,
+            le quali posso non ben ben fornire:
+            cioè la donna, la taverna e 'l dado;
+            queste mi fanno 'l cor lieto sentire.</p>
+        <footer>— Cecco Angiolieri-“Tre cose solamente m’ènno in grado”</footer>
+    </blockquote>
+  </section>
 
-    <a href="/mondoAnimale/index.html">
-    <div class="card">
-      <h3>Mondo Animali</h3>
-        <div class="overlay">
-          <p>questo progetto implementa le immagini degli animali </p>
-      </div>
-    </div>
-    </a>
-    
-    <div class="card">
-      <h3>Tavola Pitagorica</h3>
-        <div class="overlay">
-         <p>questo progetto implementa la tavola pitagorica con javascrypt </p>
-        </div>
-    </div>
-  </div> 
+  <section id="competenze" class="sezione">
+    <h2>Competenze</h2>
+    <ul class="lista-competenze">
+        <li><strong>HTML</strong> — struttura semantica e accessibilità</li>
+        <li><strong>CSS</strong> — cascade, box model, selettori</li>
+        <li><strong>JavaScript</strong> — basi in corso di apprendimento</li>
+        <li><strong>Git</strong> — versionamento e GitHub</li>
+        <li><strong>VS Code</strong> — editor e estensioni</li>
+    </ul>
+  </section>
 
-</div>
+  <section id="progetti" class="sezione">
+    <h2>Progetti</h2>
+    <div class="card">
+        <h3>Orario Scolastico</h3>
+        <p>Questo sito presenta l'orario Scolastico della 4C inforatica</p>
+        <a href="primoSito/index.html" class="btn-small">Visita il sito</a>
+    </div>
+
+    <div class="card">
+        <h3>Mantova</h3>
+        <p>Questo sito presenta sommariamente Mantova, la città del rinascimento. 
+          E' stato realizzato come esercitazione improntata sul CSS.
+        </p>
+        <a href="mantova/index.html" class="btn-small">Visita il sito</a>
+    </div>
+
+    <div class="card">
+        <h3>Mondo Animali</h3>
+        <p>Questo sito presenta sommariamente il mondo degli animali. 
+          E' stato realizzato come esercitazione improntata su HTML e CSS.
+        </p>
+        <a href="mondoAnimale/index.html" class="btn-small">Visita il sito</a>
+    </div>
+
+    <div class="card">
+        <h3>Tavola pitagorica</h3>
+        <p>Questo sito presenta la tavola pitagorica realizzata con javascrypt.</p>
+        <a href="TavolaPitagorica/TavolaPitagorica/index.html" class="btn-small">Visita il sito</a>
+    </div>
+
+</section>
+
+<footer class="footer-principale">
+    <p>&copy; 2026 Giuseppe Salvatore Statella — Portfolio in costruzione</p>
+    <ul>
+        <li><a href="https://github.com/crigiu84-cloud" class="footer-link">GitHub</a></li>
+        <li><a href="#" class="footer-link">LinkedIn</a></li>
+    </ul>
+</footer>
+
 </body>
 </html>
