@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registrazione Utente</title>
+        <h1>FORM REGSISTRAZIONE</h1>
+    </head>
+    <body>
+        <label>Cognome: </label>
+        <input type="textbox" id="txtCognome" class="label">
+
+        <br>
+        <br>
+
+        <label>Nome: </label>
+        <input type="textbox" id="txtNome" class="label">
+
+        <br>
+        <br>
+
+        <label>Codice fiscale: </label>
+        <input type="textbox" id="txtCodiceFiscale" class="label">
+
+        <br>
+        <br>
+
+        <label>Sesso: </label>
+        <input type="radio" id="maschio" class="radio">
+        <label>M</label>
+        <input type="radio" id="femmina" class="radio">
+        <label>F</label>
+
+        <br>
+        <br>
+        <label>Anno di nascita: </label>
+        <select id="combo">
+            <option value="1">opzione 1</option>
+            <option value="2">opzione 2</option>
+            <option value="3">opzione 3</option>
+        </select>
+
+        <br>
+        <br>
+
+        <input type="checkbox" id="termini" class="checkbox">
+        <label>Accetto i termini del Servizio</label>
+
+        <br>
+        <br>
+
+        <button onclick="stampaRegistrazione()">REGISTRATI</button>
+        <script src="script.js"></script>
+    </body>
+</html>
