@@ -1,200 +1,113 @@
-*, *::before, *::after {
+/* 1. RESET GENERALE */
+* {
+    /* Include padding e bordi nel calcolo della larghezza per evitare che gli elementi escano fuori */
     box-sizing: border-box;
-}
- 
-body {
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #2d2d2d;
-    background-color: #ffffff;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 1rem; }
-h2 { font-size: 1.75rem; line-height: 1.3; margin-bottom: 0.75rem; }
-h3 { font-size: 1.25rem; line-height: 1.4; margin-bottom: 0.5rem; }
- 
-h2 + p {
-    font-size: 1.05rem;
-    color: #555555;
-}
- 
-p { margin-bottom: 1rem; }
-
-a {
-    color: #1a5fa8;
-    text-decoration: underline;
-}
- 
-a:hover {
-    color: #0d3d6e;
-}
- 
-a:focus-visible {
-    outline: 3px solid #1a5fa8;
-    outline-offset: 2px;
-    border-radius: 2px;
-}
-
-#nav-principale {
-    background-color: #1a1a2e;
-    padding: 1rem 1.5rem;
-}
- 
-#nav-principale ul {
-    list-style: none;
     margin: 0;
     padding: 0;
 }
- 
+
+body {
+    /* Font standard e colori leggibili */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 2. NAVIGAZIONE CON FLEXBOX */
+#nav-principale {
+    background-color: #1a1a2e; /* Colore scuro per la barra */
+    padding: 15px 0;
+}
+
+#nav-principale ul {
+    display: flex;             /* Attiva Flexbox per mettere i link in riga */
+    justify-content: center;   /* Centra i link orizzontalmente */
+    list-style: none;          /* Toglie i pallini della lista */
+}
+
+#nav-principale li {
+    margin: 0 15px;            /* Crea spazio a destra e sinistra di ogni link */
+}
+
 .nav-link {
-    display: block;
-    color: #e8e8e8;
-    text-decoration: none;
-    padding: 0.4rem 0;
+    color: white;
+    text-decoration: none;     /* Toglie la sottolineatura blu */
+    font-weight: bold;
 }
- 
-.nav-link:hover,
-.nav-link:focus-visible {
-    color: #7eb8f7;
-    outline-color: #7eb8f7;
+
+/* Pseudo-classe :hover per cambiare colore al passaggio del mouse */
+.nav-link:hover {
+    color: #38bdf8;
 }
+
+/* 3. HERO SECTION */
 .hero {
     background-color: #1a1a2e;
-    color: #ffffff;
-    padding: 4rem 1.5rem;
-    margin-bottom: 3rem;
-}
- 
-.hero h1 {
-    color: #ffffff;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
- 
-.hero-intro {
-    font-size: 1.15rem;
-    color: #b0c4de;
-    max-width: 60ch;
-    margin-bottom: 2rem;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
 }
 
-.btn {
-    display: inline-block;
-    background-color: #2e75b6;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 0.75rem 1.75rem;
-    border-radius: 4px;
-    font-weight: bold;
-}
- 
-.btn:hover {
-    background-color: #1a5fa8;
-    color: #ffffff;
-}
- 
-.btn-small {
-    display: inline-block;
-    color: #2e75b6;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
- 
-.btn-small:hover {
-    text-decoration: underline;
-}
-
+/* 4. LAYOUT DELLE SEZIONI */
 .sezione {
-    margin-bottom: 3rem;
-    padding-top: 1rem;
-}
- 
-/* Le card ora sono verticali: con Grid le affiancheremo */
-.card {
-    background-color: #f8f9fa;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-}
- 
-.card h3 {
-    color: #1a1a2e;
-    margin-bottom: 0.5rem;
+    max-width: 900px;          /* Limita la larghezza massima del contenuto */
+    margin: 30px auto;         /* Centra la sezione e distanzia dalle altre */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;        /* Arrotonda gli angoli */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Aggiunge un'ombra leggera */
 }
 
+/* 5. SISTEMA GRID PER I PROGETTI (DUE COLONNE) */
+.progetti-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* due colonne */
+    gap: 20px;
+}
+
+.card {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+/* Pseudo-classe per dare un colore diverso al titolo della prima card */
+.card:first-child h3 {
+    color: #2e75b6;
+}
+
+/* 6. COMPETENZE E LISTE */
 .lista-competenze {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
- 
-.lista-competenze li {
-    padding: 0.6rem 0;
-}
- 
-.lista-competenze li:not(:last-child) {
-    border-bottom: 1px solid #e8e8e8;
-}
- 
+
+/* Pseudo-elemento ::before per aggiungere un simbolo personalizzato */
 .lista-competenze li::before {
-    content: "\2192";  /* → */
+    content: "✓ ";             /* Aggiunge una spunta prima di ogni competenza */
     color: #2e75b6;
-    margin-right: 0.6rem;
     font-weight: bold;
 }
 
-blockquote {
-    border-left: 4px solid #2e75b6;
-    padding-left: 1.25rem;
-    margin: 1.5rem 0;
-    font-style: italic;
-    color: #555555;
-}
- 
-blockquote footer {
-    font-style: normal;
-    font-size: 0.9rem;
-    color: #888888;
-    margin-top: 0.5rem;
-}
-
-
-.footer-principale {
-    border-top: 2px solid #e0e0e0;
-    margin-top: 4rem;
-    padding: 2rem 0;
-    color: #777777;
-    font-size: 0.9rem;
-}
- 
-.footer-principale ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 0.5rem;
-}
- 
-.footer-link {
-    color: #555555;
+/* 7. PULSANTI E LINK */
+.btn-small {
+    display: inline-block; /*Gli elementi stanno in riga, ma col block posso dargli anche ad esempio larghezza, margine ecc.. */
+    margin-top: 10px;
+    color: #2e75b6;
+    font-weight: bold;
     text-decoration: none;
 }
- 
-.footer-link:hover {
-    text-decoration: underline;
-}
 
-.sezione h2::before {
-    content: "";
-    display: inline-block;
-    width: 4px;
-    height: 0.9em;
-    background-color: #2e75b6;
-    margin-right: 0.6rem;
-    vertical-align: middle;
-    border-radius: 2px;
+/* 8. RESPONSIVE PER SMARTPHONE */
+@media (max-width: 600px) {
+    /* Quando lo schermo è piccolo, la griglia passa da 2 colonne a 1 sola */
+    #progetti {
+        grid-template-columns: 1fr;
+    }
+    
+    #nav-principale ul {
+        flex-direction: column; /* I link del menu vanno uno sotto l'altro */
+        align-items: center;
+    }
 }

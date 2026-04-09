@@ -4,93 +4,102 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="stile.css">
-  <title>progetti html</title>
+  <title>Giuseppe Statella | Portfolio</title>
 </head>
 <body>
-  <h1>portfolio di tutti i miei progetti HTML,CSS,JAVASCRYPT</h1>
+
   <nav id="nav-principale">
-    <ul>
+    <div class="nav-container">
+      <span class="logo">GS_Portfolio</span>
+      <ul>
         <li><a href="#about" class="nav-link">Chi sono</a></li>
         <li><a href="#competenze" class="nav-link">Competenze</a></li>
         <li><a href="#progetti" class="nav-link">Progetti</a></li>
         <li><a href="contatti.html" class="nav-link">Contatti</a></li>
-    </ul>
+      </ul>
+    </div>
   </nav>
 
   <header class="hero">
-    <h1>Giuseppe Salvatore Statella</h1>
-    <p class="hero-intro">
-        Sviluppatore web junior in formazione. Sto imparando HTML, CSS e JavaScript
-        costruendo questo portfolio passo dopo passo.
-    </p>
-    <a href="#progetti" class="btn">Guarda i miei progetti</a>
+    <div class="hero-content">
+      <h1>Giuseppe Salvatore Statella</h1>
+      <p class="hero-intro">
+        Studente di Informatica & Aspirante Cybersecurity Analyst.<br>
+        Attualmente sto esplorando le potenzialità del Web Dev.
+      </p>
+      <div class="hero-btns">
+        <a href="#progetti" class="btn">Guarda i miei progetti</a>
+        <a href="https://github.com/crigiu84-cloud" class="btn btn-outline">GitHub</a>
+      </div>
+    </div>
   </header>
 
-  <section id="about" class="sezione">
-    <h2>Chi sono</h2>
-    <p>Sono uno studente di 4 superiore che me la cavo con la programmazione anche se mi piace più 
-      cybersecurity.
-    </p>
-    <p>Mi piace suonare la chitarra, ascoltare musica soprattutto l'indie rock e il mio gruppo preferito sono gli arctic monkeys</p>
-    <blockquote>
-        <p>Tre cose solamente m'ènno in grado,
-            le quali posso non ben ben fornire:
-            cioè la donna, la taverna e 'l dado;
-            queste mi fanno 'l cor lieto sentire.</p>
-        <footer>— Cecco Angiolieri-“Tre cose solamente m’ènno in grado”</footer>
-    </blockquote>
-  </section>
+  <main class="container">
+    <section id="about" class="sezione">
+      <h2>Chi sono</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Frequento il quarto anno di superiore con una forte passione per la <strong>cybersecurity</strong> e la logica della programmazione.</p>
+          <p>Quando non sono davanti a un terminale, mi trovi con una chitarra in mano: amo l'indie rock e il sound degli <em>Arctic Monkeys</em>.</p>
+        </div>
+        <blockquote class="citazione">
+          <p>"Tre cose solamente m'ènno in grado... cioè la donna, la taverna e 'l dado."</p>
+          <footer>— Cecco Angiolieri</footer>
+        </blockquote>
+      </div>
+    </section>
 
-  <section id="competenze" class="sezione">
-    <h2>Competenze</h2>
-    <ul class="lista-competenze">
-        <li><strong>HTML</strong> — struttura semantica e accessibilità</li>
-        <li><strong>CSS</strong> — cascade, box model, selettori</li>
-        <li><strong>JavaScript</strong> — basi in corso di apprendimento</li>
-        <li><strong>Git</strong> — versionamento e GitHub</li>
-        <li><strong>VS Code</strong> — editor e estensioni</li>
-    </ul>
-  </section>
+    <section id="competenze" class="sezione">
+      <h2>Competenze</h2>
+      <div class="skills-grid">
+        <div class="skill-tag">HTML5</div>
+        <div class="skill-tag">CSS3 / Grid</div>
+        <div class="skill-tag">JavaScript</div>
+        <div class="skill-tag">Git / GitHub</div>
+        <div class="skill-tag">VS Code</div>
+        <div class="skill-tag">Linux Basics</div>
+      </div>
+    </section>
 
-  <section id="progetti" class="sezione">
-    <h2>Progetti</h2>
-    <div class="card">
-        <h3>Orario Scolastico</h3>
-        <p>Questo sito presenta l'orario Scolastico della 4C inforatica</p>
-        <a href="primoSito/index.html" class="btn-small">Visita il sito</a>
-    </div>
+    <section id="progetti" class="sezione">
+      <h2>I miei Progetti</h2>
+      <div class="progetti-grid">
+        <div class="card">
+          <h3>Orario Scolastico</h3>
+          <p>Layout tabellare per la gestione della classe 4C Informatica.</p>
+          <a href="primoSito/index.html" class="btn-small">Esplora Progetto →</a>
+        </div>
 
-    <div class="card">
-        <h3>Mantova</h3>
-        <p>Questo sito presenta sommariamente Mantova, la città del rinascimento. 
-          E' stato realizzato come esercitazione improntata sul CSS.
-        </p>
-        <a href="mantova/index.html" class="btn-small">Visita il sito</a>
-    </div>
+        <div class="card">
+          <h3>Mantova</h3>
+          <p>Sito vetrina dedicato alla città del Rinascimento. Focus su design e colori.</p>
+          <a href="mantova/index.html" class="btn-small">Esplora Progetto →</a>
+        </div>
 
-    <div class="card">
-        <h3>Mondo Animali</h3>
-        <p>Questo sito presenta sommariamente il mondo degli animali. 
-          E' stato realizzato come esercitazione improntata su HTML e CSS.
-        </p>
-        <a href="mondoAnimale/index.html" class="btn-small">Visita il sito</a>
-    </div>
+        <div class="card">
+          <h3>Mondo Animali</h3>
+          <p>Esercitazione sulla struttura semantica HTML e gestione media.</p>
+          <a href="mondoAnimale/index.html" class="btn-small">Esplora Progetto →</a>
+        </div>
 
-    <div class="card">
-        <h3>Tavola pitagorica</h3>
-        <p>Questo sito presenta la tavola pitagorica realizzata con javascrypt.</p>
-        <a href="TavolaPitagorica/TavolaPitagorica/index.html" class="btn-small">Visita il sito</a>
-    </div>
+        <div class="card">
+          <h3>Tavola Pitagorica</h3>
+          <p>Logica matematica applicata con JavaScript e generazione dinamica del DOM.</p>
+          <a href="/TavolaPitagorica/TavolaPitagorica/index.html" class="btn-small">Esplora Progetto →</a>
+        </div>
 
-</section>
+        <div class="card">
+          <h3>Paragrafi a scomparsa</h3>
+          <p>Creiamo i paragrafi a scomparsa con JavaScript.</p>
+          <a href="/paragrafiAScomparsa/index.html" class="btn-small">Esplora Progetto →</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<footer class="footer-principale">
-    <p>&copy; 2026 Giuseppe Salvatore Statella — Portfolio in costruzione</p>
-    <ul>
-        <li><a href="https://github.com/crigiu84-cloud" class="footer-link">GitHub</a></li>
-        <li><a href="#" class="footer-link">LinkedIn</a></li>
-    </ul>
-</footer>
+  <footer class="footer-principale">
+    <p>&copy; 2026 Giuseppe Salvatore Statella — Built with &hearts; and CSS Grid</p>
+  </footer>
 
 </body>
 </html>
