@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>QUIZ INFORMATICO</title>
+    </head>
+    <body style="background-color:antiquewhite;">
+        <p><b>dati anagrafici</b></p>
+        <label>Cognome: </label>
+        <input type="text" id="textboxCognome">
+
+        <label>Nome: </label>
+        <input type="text" id="textboxNome">
+        <br>
+
+        <p><b>Data di nascita</b></p>
+        <label>Giorno</label>
+        <input type="text" id="textboxGiorno">
+
+        <label>Mese</label>
+        <select id="selectMese">
+          
+        </select>
+
+        <label>Anno</label>
+        <input type="text" id="textboxAnno" style="margin: 20px;">
+        
+            <fieldset style="background-color: white;">
+                <legend><b>Domande</b></legend>
+
+                <p><b>Qual'è il linguaggio di programmazione utilizzato per creare e modificare i database? (in maiuscolo)</b></p>
+                <input type="text" id="textboxSQL">
+    
+                <p><b>Quanti valori può assumere una variabile booleana?</b></p>
+                <select id="comboBool">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>4</option>
+                    <option>256</option>
+                </select>
+    
+                <br>
+    
+                <p><b>Quali sono le librerie caricate a runtime?</b></p>
+                <input type="radio" id="radioLibrerieStatiche">
+                <label>Statiche</label>
+                
+                <br>
+                <input type="radio" id="radioLibrerieDinamiche">
+                <label>Dinamiche</label>
+            
+                <br>
+    
+                <p><b>Quali sono tra queste una parola chiave in c++?</b></p>
+                <input type="checkbox" id=" checkVoid">
+                <label>Void</label>
+                <br>
+                <input type="checkbox" id=" checkInteger">
+                <label>Integer</label>
+                <br>
+                <input type="checkbox" id=" checkChar">
+                <label>Char</label>
+            
+                <br>
+
+                <p><b>Otto bit bit corrispondono a un...</b></p>
+                <input type="text" id="txtBit">
+            </fieldset>
+        
+            <button onclick="elaboraDati()">Elabora</button> <button onclick="cancella()">Cancella</button>
+
+            <fieldset>
+                <legend>Esito</legend>
+                <label>Punteggio:</label>
+                <input type="text" id="textboxEsito">
+            </fieldset>
+        <script src="script.js"></script>
+    </body>
+</html>
