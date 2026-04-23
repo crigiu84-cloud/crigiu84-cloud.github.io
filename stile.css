@@ -18,6 +18,11 @@ body {
 #nav-principale {
     background-color: #1a1a2e; /* Colore scuro per la barra */
     padding: 15px 0;
+    
+    /* Proprietà per il blocco della barra */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Assicura che la barra resti "sopra" gli altri contenuti */
 }
 
 #nav-principale ul {
@@ -99,15 +104,104 @@ body {
     text-decoration: none;
 }
 
-/* 8. RESPONSIVE PER SMARTPHONE */
-@media (max-width: 600px) {
-    /* Quando lo schermo è piccolo, la griglia passa da 2 colonne a 1 sola */
-    #progetti {
-        grid-template-columns: 1fr;
+/* 9. STILE FAQ (Accordion) */
+.faq-item {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.faq-item summary {
+    font-weight: bold;
+    cursor: pointer;
+    color: #1a1a2e;
+    list-style: none; /* Rimuove il triangolino di default su alcuni browser */
+}
+
+/* Aggiunge un indicatore personalizzato (+) */
+.faq-item summary::after {
+    content: " +";
+    float: right;
+    color: #2e75b6;
+}
+
+.faq-item[open] summary::after {
+    content: " -";
+}
+
+.faq-item p {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    color: #555;
+}
+
+/* 10. STILE FOOTER */
+.footer-principale {
+    background-color: #1a1a2e;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+.footer-principale a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-principale a:hover {
+    text-decoration: underline;
+}
+
+/* 8. MEDIA QUERIES PER IL RESPONSIVE */
+
+/* --- TABLET (Schermi medi, fino a 900px) --- */
+@media (max-width: 900px) {
+    .sezione {
+        margin: 20px 15px; /* Margini più stretti per sfruttare lo spazio */
+        padding: 15px;
     }
     
+    .progetti-grid {
+        grid-template-columns: 1fr 1fr; /* Mantiene 2 colonne, ma riduce un po' gli spazi */
+        gap: 15px;
+    }
+}
+
+/* --- SMARTPHONE (Schermi piccoli, fino a 600px) --- */
+@media (max-width: 600px) {
+    /* Layout Hero più compatto */
+    .hero {
+        padding: 40px 15px;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem; /* Riduciamo leggermente il titolo */
+    }
+
     #nav-principale ul {
-        flex-direction: column; /* I link del menu vanno uno sotto l'altro */
-        align-items: center;
+        flex-direction: row;      /* Forza la riga */
+        flex-wrap: wrap;          /* Permette di andare a capo se manca spazio */
+        justify-content: center;  /* Tiene i link centrati */
+        gap: 5px 15px;            /* Spazio verticale e orizzontale tra i link */
+    }
+
+    #nav-principale li {
+        margin: 0;                /* Resettiamo il margine per usare il gap sopra */
+    }
+
+    /* Griglia progetti: 1 sola colonna */
+    .progetti-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Sezioni più snelle */
+    .sezione {
+        margin: 15px 10px;
     }
 }
