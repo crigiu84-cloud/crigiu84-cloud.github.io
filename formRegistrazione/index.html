@@ -2,10 +2,24 @@
 <html>
     <head>
         <title>Registrazione Utente</title>
-        <h1>FORM REGSISTRAZIONE</h1>
+        
         <link rel="stylesheet" href="/stile.css">
+        <link rel="stylesheet" href="stile.css">
     </head>
     <body>
+        <nav id="nav-principale">
+    <div class="nav-container">
+      <span class="logo">GS_Portfolio</span>
+      <ul>
+        <li><a href="/index.html#about" class="nav-link">Chi sono</a></li>
+        <li><a href="/index.html#progetti" class="nav-link">Progetti</a></li>
+        <li><a href="/index.html#competenze" class="nav-link">Competenze</a></li>
+        <li><a href="/contatti/contatti.html" class="nav-link">Contatti</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <h1>FORM REGSISTRAZIONE</h1>
         <label>Cognome: </label>
         <input type="textbox" id="txtCognome" class="label">
 
@@ -50,5 +64,14 @@
 
         <button onclick="stampaRegistrazione()">REGISTRATI</button>
         <script src="script.js"></script>
+
+        <div class="btn-container">
+            <a href="/index.html" id="btn-left">torna al portoflio</a>
+            <a href="/esempioRegistrazione/index.html" id="btn-right">vai al prossimo progetto</a>
+    </div>
+
+    <footer class="footer-principale">
+     <p>&copy; 2026 Giuseppe Salvatore Statella | 4ªC Informatica</p>
+  </footer>
     </body>
 </html>

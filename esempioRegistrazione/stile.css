@@ -1,18 +1,3 @@
-.dispari {
-	background-color: red;
-}
-
-td {
-	height: 50px;
-	width: 50px;
-	border: 1px solid black;
-	text-align: center;
-}
-
-table {
-	border-collapse: collapse;
-}
-
 .btn-container {
     display: flex;
     justify-content: space-between; /* btn-left a sinistra, btn-right a destra */
@@ -28,13 +13,4 @@ table {
     margin-right: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-}
-
-.footer {
-	text-align: center;
-	font-family: Arial, sans-serif;
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    margin-top: 40px;
 }
