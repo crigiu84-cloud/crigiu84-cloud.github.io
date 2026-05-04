@@ -1,0 +1,139 @@
+body {
+    background-color: #f4f4f9; /* Come il portfolio */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+}
+
+.pagina {
+    background-color: #fff5f5;
+    padding: 40px;
+    border-radius: 15px;
+    width: 90%;
+    margin: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.titolo h1 {
+    color: #1a1a2e;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #84daff;
+}
+
+thead th {
+    background: #1a1a2e; /* Blu scuro della Navbar */
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+}
+
+tbody th {
+    background-color: #eef2ff; /* Un azzurro molto chiaro invece del crema */
+    color: #1a1a2e;
+    border-right: 2px solid #38bdf8; /* Azzurro del portfolio */
+    font-weight: 600;
+    padding: 15px;
+}
+
+td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #84daff;
+    border-right: 1px solid #84daff;
+}
+
+tr:hover td {
+    background-color: #fff0f0;
+}
+
+a {
+    color: #2e75b6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #38bdf8;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between; /* btn-left a sinistra, btn-right a destra */
+    margin: 20px 0;
+}
+
+#btn-left, #btn-right {
+    font-weight: bold;
+    background-color: #ffffff;
+    color: #1a1a2e;
+    padding: 10px 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+/* --- TABLET E SMARTPHONE (Sotto i 900px) --- */
+@media (max-width: 900px) {
+    body {
+        padding: 10px; /* Riduciamo il padding esterno */
+    }
+
+    .pagina {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Rendo la tabella scrollabile lateralmente */
+    .contenitore-tabella {
+        overflow-x: auto; /* Permette lo swipe a destra e sinistra */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        min-width: 600px; /* Impedisce alla tabella di schiacciarsi troppo */
+    }
+
+    .titolo h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* --- SOLO SMARTPHONE (Sotto i 600px) --- */
+@media (max-width: 600px) {
+    /* Sistemiamo i pulsanti in verticale se non c'è spazio */
+    .btn-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #btn-left, #btn-right {
+        text-align: center;
+        margin: 0;
+        width: 100%;
+    }
+
+    /* Opzionale: rimpicciolisco il font affinchè la tabella si legga meglio */
+    table td, table th {
+        padding: 8px 5px;
+        font-size: 13px;
+    }
+    
+    .titolo h1 {
+        font-size: 1.4rem; /*uso rem perchè è un unità di misura relativa che va in base al font del tag <html> e se ad esempio 
+        l'utente imposta la grandezza del carattere a "grande" da mobile allora con rem il font si adatta automaticamente
+        */
+    }
+}
