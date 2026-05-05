@@ -1,9 +1,3 @@
-/* Solo l'indispensabile per non rompere il sito */
-
-.nascosto {
-  display: none;
-}
-
 .btn-container {
     display: flex;
     justify-content: space-between; /* btn-left a sinistra, btn-right a destra */

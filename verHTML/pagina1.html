@@ -2,8 +2,21 @@
 <html>
     <head>
         <title>pagina1</title>
+        <link rel="stylesheet" href="/stile.css">
     </head>
     <body>
+        <nav id="nav-principale">
+    <div class="nav-container">
+      <span class="logo">GS_Portfolio</span>
+      <ul>
+        <li><a href="/index.html#about" class="nav-link">Chi sono</a></li>
+        <li><a href="/index.html#progetti" class="nav-link">Progetti</a></li>
+         <li><a href="/index.html#competenze" class="nav-link">Competenze</a></li>
+        <li><a href="/contatti/contatti.html" class="nav-link">Contatti</a></li>
+      </ul>
+    </div>
+  </nav>
+
         <h2>Inserisci numero passeggeri</h2>
 
         <input type="number" id="numPasseggeri" min="1">
@@ -13,6 +26,10 @@
         
         <br><br>
         <button onclick="continua()">Continua</button>
+
+         <footer class="footer-principale">
+     <p>&copy; 2026 Giuseppe Salvatore Statella | 4ªC Informatica</p>
+  </footer>
         <script src="script.js"></script>
     </body>
 </html>

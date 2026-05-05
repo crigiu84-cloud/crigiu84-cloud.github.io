@@ -8,9 +8,9 @@ function generaCampi() {
                     <div class="passeggero-block" style="margin-bottom: 15px;">
                         <h3>Passeggero ${i}</h3>
                         <label>Nome:</label>
-                        <input type="text" class="txtNome"><br><br>
+                        <input type="text" id="txtNome"><br><br>
                         <label>Cognome:</label>
-                        <input type="text" class="txtCognome">
+                        <input type="text" id="txtCognome">
                     </div>
                 `;
             }
@@ -113,7 +113,7 @@ function caricaRiepilogo() {
 
     let s="";
 
-    s+="<p>Passeggero: " + nome + "," + cognome + "</p> <br>";
+    s+="<p>Passeggero: " + Nome + "," + cognome + "</p> <br>";
     s+= "<p>città di partenza: " + partenza + "</p> <br>";
     s+= "<p>città arrivo: " +destinazione + "</p> <br>";
     s+= "<p> data: " + giorno + "/" + mese + "/" + anno + "</p> <br>";
