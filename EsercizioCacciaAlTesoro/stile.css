@@ -1,16 +1,7 @@
-.dispari {
-	background-color: red;
-}
+/* Solo l'indispensabile per non rompere il sito */
 
-td {
-	height: 50px;
-	width: 50px;
-	border: 1px solid black;
-	text-align: center;
-}
-
-table {
-	border-collapse: collapse;
+.nascosto {
+  display: none;
 }
 
 .btn-container {
@@ -28,13 +19,4 @@ table {
     margin-right: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-}
-
-.footer {
-	text-align: center;
-	font-family: Arial, sans-serif;
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    margin-top: 40px;
 }
