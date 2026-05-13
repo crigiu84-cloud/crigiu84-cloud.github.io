@@ -1,207 +1,646 @@
-/* 1. RESET GENERALE */
-* {
-    /* Include padding e bordi nel calcolo della larghezza per evitare che gli elementi escano fuori */
-    box-sizing: border-box;
+/* =========================
+   GOOGLE FONT
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* =========================
+   RESET
+========================= */
+
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body {
-    /* Font standard e colori leggibili */
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
+html{
+    scroll-behavior: smooth;
 }
 
-/* 2. NAVIGAZIONE CON FLEXBOX */
-#nav-principale {
-    background-color: #1a1a2e; /* Colore scuro per la barra */
-    padding: 15px 0;
-    
-    /* Proprietà per il blocco della barra */
+body{
+    font-family: "Inter", sans-serif;
+    background:
+    radial-gradient(circle at top left, #172554 0%, transparent 30%),
+    radial-gradient(circle at bottom right, #0f766e 0%, transparent 25%),
+    #0f172a;
+
+    color: #f8fafc;
+    line-height: 1.7;
+
+    overflow-x: hidden;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#38bdf8, #14b8a6);
+    border-radius: 20px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+#nav-principale{
     position: sticky;
     top: 0;
-    z-index: 1000; /* Assicura che la barra resti "sopra" gli altri contenuti */
+    z-index: 1000;
+
+    backdrop-filter: blur(12px);
+
+    background: rgba(15, 23, 42, 0.75);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    animation: navFade 1s ease;
 }
 
-#nav-principale ul {
-    display: flex;             /* Attiva Flexbox per mettere i link in riga */
-    justify-content: center;   /* Centra i link orizzontalmente */
-    list-style: none;          /* Toglie i pallini della lista */
+@keyframes navFade{
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-#nav-principale li {
-    margin: 0 15px;            /* Crea spazio a destra e sinistra di ogni link */
-}
+.nav-container{
+    max-width: 1200px;
+    margin: auto;
 
-.nav-link {
-    color: white;
-    text-decoration: none;     /* Toglie la sottolineatura blu */
-    font-weight: bold;
-}
-
-/* Pseudo-classe :hover per cambiare colore al passaggio del mouse */
-.nav-link:hover {
-    color: #38bdf8;
-}
-
-/* 3. HERO SECTION */
-.hero {
-    background-color: #1a1a2e;
-    color: white;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-/* 4. LAYOUT DELLE SEZIONI */
-.sezione {
-    max-width: 900px;          /* Limita la larghezza massima del contenuto */
-    margin: 30px auto;         /* Centra la sezione e distanzia dalle altre */
     padding: 20px;
-    background-color: white;
-    border-radius: 8px;        /* Arrotonda gli angoli */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Aggiunge un'ombra leggera */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* 5. SISTEMA GRID PER I PROGETTI (DUE COLONNE) */
-.progetti-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* due colonne */
-    gap: 20px;
+.logo{
+    font-size: 1.2rem;
+    font-weight: 800;
+
+    background: linear-gradient(90deg, #38bdf8, #14b8a6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    letter-spacing: 1px;
 }
 
-.card {
-    background-color: #fafafa;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 6px;
-}
-
-/* Pseudo-classe per dare un colore diverso al titolo della prima card */
-.card:first-child h3 {
-    color: #2e75b6;
-}
-
-/* 6. COMPETENZE E LISTE */
-.lista-competenze {
+#nav-principale ul{
+    display: flex;
     list-style: none;
+    gap: 35px;
 }
 
-/* Pseudo-elemento ::before per aggiungere un simbolo personalizzato */
-.lista-competenze li::before {
-    content: "✓ ";             /* Aggiunge una spunta prima di ogni competenza */
-    color: #2e75b6;
-    font-weight: bold;
-}
-
-/* 7. PULSANTI E LINK */
-.btn-small {
-    display: inline-block; /*Gli elementi stanno in riga, ma col block posso dargli anche ad esempio larghezza, margine ecc.. */
-    margin-top: 10px;
-    color: #2e75b6;
-    font-weight: bold;
+.nav-link{
     text-decoration: none;
+    color: #cbd5e1;
+
+    font-weight: 500;
+
+    position: relative;
+
+    transition: 0.3s;
 }
 
-/* 9. STILE FAQ (Accordion) */
-.faq-item {
-    background-color: #fafafa;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    margin-bottom: 10px;
-    padding: 15px;
-    transition: all 0.3s ease;
+.nav-link::after{
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+
+    width: 0%;
+    height: 2px;
+
+    background: linear-gradient(90deg, #38bdf8, #14b8a6);
+
+    transition: 0.3s;
 }
 
-.faq-item summary {
-    font-weight: bold;
-    cursor: pointer;
-    color: #1a1a2e;
-    list-style: none; /* Rimuove il triangolino di default su alcuni browser */
-}
-
-/* Aggiunge un indicatore personalizzato (+) */
-.faq-item summary::after {
-    content: " +";
-    float: right;
-    color: #2e75b6;
-}
-
-.faq-item[open] summary::after {
-    content: " -";
-}
-
-.faq-item p {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid #eee;
-    color: #555;
-}
-
-/* 10. STILE FOOTER */
-.footer-principale {
-    background-color: #1a1a2e;
+.nav-link:hover{
     color: white;
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 40px;
 }
 
-.footer-principale a {
+.nav-link:hover::after{
+    width: 100%;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+}
+
+.hero::before{
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background: #38bdf8;
+
+    filter: blur(180px);
+
+    opacity: 0.15;
+
+    top: -100px;
+    left: -100px;
+}
+
+.hero::after{
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    background: #14b8a6;
+
+    filter: blur(180px);
+
+    opacity: 0.12;
+
+    bottom: -100px;
+    right: -100px;
+}
+
+.hero-content{
+    max-width: 900px;
+    z-index: 2;
+
+    animation: heroFade 1.2s ease;
+}
+
+@keyframes heroFade{
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1{
+    font-size: 5rem;
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+
+    font-weight: 900;
+
+    letter-spacing: -3px;
+}
+
+.hero-intro{
+    font-size: 1.3rem;
+
+    color: #cbd5e1;
+
+    max-width: 750px;
+
+    margin: auto auto 40px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-btns{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn{
+    display: inline-block;
+
+    padding: 15px 28px;
+
+    border-radius: 14px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.btn::before{
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: -100%;
+
+    background: rgba(255,255,255,0.15);
+
+    transition: 0.4s;
+}
+
+.btn:hover::before{
+    left: 100%;
+}
+
+.btn{
+    background: linear-gradient(135deg, #38bdf8, #14b8a6);
+    color: white;
+
+    box-shadow:
+    0 10px 25px rgba(56,189,248,0.3);
+}
+
+.btn:hover{
+    transform: translateY(-4px) scale(1.03);
+}
+
+.btn-outline{
+    background: transparent;
+
+    border: 2px solid #38bdf8;
+
+    color: #38bdf8;
+
+    box-shadow: none;
+}
+
+.btn-outline:hover{
+    background: #38bdf8;
+    color: #0f172a;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 0 20px 100px;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.sezione{
+    margin-bottom: 120px;
+
+    animation: fadeUp both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 30%;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity: 0;
+        transform: translateY(60px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sezione h2{
+    font-size: 2.5rem;
+
+    margin-bottom: 40px;
+
+    position: relative;
+
+    display: inline-block;
+}
+
+.sezione h2::after{
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -10px;
+
+    width: 70%;
+    height: 4px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(90deg, #38bdf8, #14b8a6);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.about-text,
+.citazione{
+    background: rgba(30, 41, 59, 0.7);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(12px);
+
+    padding: 35px;
+
+    border-radius: 24px;
+
+    transition: 0.3s;
+}
+
+.about-text:hover,
+.citazione:hover{
+    transform: translateY(-6px);
+
+    border-color: rgba(56,189,248,0.4);
+}
+
+.about-text p{
+    margin-bottom: 20px;
+}
+
+.citazione{
+    color: #cbd5e1;
+    font-style: italic;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.skill-tag{
+    padding: 14px 22px;
+
+    border-radius: 999px;
+
+    background: rgba(30,41,59,0.8);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    color: #e2e8f0;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.skill-tag:hover{
+    transform: translateY(-5px) scale(1.05);
+
+    background: linear-gradient(135deg, #38bdf8, #14b8a6);
+
+    color: white;
+
+    box-shadow:
+    0 10px 25px rgba(20,184,166,0.3);
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.progetti-grid{
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 28px;
+}
+
+.card{
+    position: relative;
+
+    background: rgba(30,41,59,0.75);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(12px);
+
+    border-radius: 26px;
+
+    padding: 35px;
+
+    overflow: hidden;
+
+    transition: 0.4s;
+}
+
+.card::before{
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.08),
+        transparent
+    );
+
+    transition: 0.7s;
+}
+
+.card:hover::before{
+    left: 100%;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+
+    border-color: rgba(56,189,248,0.4);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,0.35);
+}
+
+.card h3{
+    margin-bottom: 18px;
+
+    font-size: 1.3rem;
+}
+
+.card p{
+    color: #cbd5e1;
+
+    margin-bottom: 25px;
+}
+
+.btn-small{
+    color: #38bdf8;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.btn-small:hover{
+    letter-spacing: 1px;
+}
+
+/* =========================
+   FAQ
+========================= */
+
+.faq-item{
+    background: rgba(30,41,59,0.75);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+
+    padding: 22px;
+
+    margin-bottom: 18px;
+
+    transition: 0.3s;
+}
+
+.faq-item:hover{
+    border-color: rgba(56,189,248,0.3);
+}
+
+.faq-item summary{
+    cursor: pointer;
+
+    font-weight: 700;
+
+    font-size: 1.05rem;
+}
+
+.faq-item p{
+    margin-top: 15px;
+
+    color: #cbd5e1;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer-principale{
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+    color: #94a3b8;
+}
+
+.footer-principale a{
     color: #38bdf8;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
 }
 
-.footer-principale a:hover {
-    text-decoration: underline;
-}
+/* =========================
+   RESPONSIVE
+========================= */
 
-/* 8. MEDIA QUERIES PER IL RESPONSIVE */
+@media(max-width: 900px){
 
-/* --- TABLET (Schermi medi, fino a 900px) --- */
-@media (max-width: 900px) {
-    .sezione {
-        margin: 20px 15px; /* Margini più stretti per sfruttare lo spazio */
-        padding: 15px;
-    }
-    
-    .progetti-grid {
-        grid-template-columns: 1fr 1fr; /* Mantiene 2 colonne, ma riduce un po' gli spazi */
-        gap: 15px;
-    }
-}
-
-/* --- SMARTPHONE (Schermi piccoli, fino a 600px) --- */
-@media (max-width: 600px) {
-    /* Layout Hero più compatto */
-    .hero {
-        padding: 40px 15px;
-    }
-    
-    .hero h1 {
-        font-size: 1.5rem; /* Riduciamo leggermente il titolo */
+    .hero h1{
+        font-size: 3.5rem;
     }
 
-    #nav-principale ul {
-        flex-direction: row;      /* Forza la riga */
-        flex-wrap: wrap;          /* Permette di andare a capo se manca spazio */
-        justify-content: center;  /* Tiene i link centrati */
-        gap: 5px 15px;            /* Spazio verticale e orizzontale tra i link */
-    }
-
-    #nav-principale li {
-        margin: 0;                /* Resettiamo il margine per usare il gap sopra */
-    }
-
-    /* Griglia progetti: 1 sola colonna */
-    .progetti-grid {
+    .about-grid{
         grid-template-columns: 1fr;
     }
+}
 
-    /* Sezioni più snelle */
-    .sezione {
-        margin: 15px 10px;
+@media(max-width: 600px){
+
+    .hero h1{
+        font-size: 2.7rem;
+    }
+
+    .hero-intro{
+        font-size: 1.05rem;
+    }
+
+    .nav-container{
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    #nav-principale ul{
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-btns{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn{
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
     }
 }
