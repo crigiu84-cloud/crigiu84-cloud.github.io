@@ -6,6 +6,7 @@
     <title>Gestione Studenti</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stile.css">
     <style>
         body { background-color: #f8f9fa; padding-top: 20px; }
         .header-custom { background-color: #007bff; color: white; padding: 15px; margin-bottom: 20px; }
@@ -13,15 +14,27 @@
 </head>
 <body>
 
+    <nav id="nav-principale">
+        <div class="nav-container">
+          <span class="logo">GS_Portfolio</span>
+          <ul>
+            <li><a href="/index.html#about" class="nav-link">Chi sono</a></li>
+            <li><a href="/index.html#progetti" class="nav-link">Progetti</a></li>
+            <li><a href="/index.html#competenze" class="nav-link">Competenze</a></li>
+            <li><a href="/contatti/contatti.html" class="nav-link">Contatti</a></li>
+          </ul>
+        </div>
+      </nav>
+
 <div class="container">
-    <!-- Header basato su image_4774da.png -->
+   
     <div class="row header-custom rounded shadow-sm">
         <div class="col">
             <h2 class="m-0">Gestione Studenti</h2>
         </div>
     </div>
 
-    <!-- Form di inserimento -->
+   
     <div class="row g-3 mb-4 align-items-end">
         <div class="col-md-3">
             <label for="nome" class="form-label d-none">Nome</label>
@@ -58,6 +71,9 @@
     </div>
 </div>
 
+<footer class="footer-principale">
+    <p>&copy; 2026 Giuseppe Salvatore Statella | 4ªC Informatica</p>
+ </footer>
 <!-- Collegamento al file JS esterno -->
 <script src="script.js"></script>
 </body>
