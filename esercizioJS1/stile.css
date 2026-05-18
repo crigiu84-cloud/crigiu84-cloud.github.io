@@ -4,10 +4,93 @@
     margin: 20px 0;
 }
 
+/* Input moderni */
+input,
+select {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(0,255,255,0.2);
+
+    color: white;
+
+    padding: 10px;
+    border-radius: 8px;
+
+    margin: 8px 0;
+
+    transition: 0.3s;
+}
+
+/* Focus animato */
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #00ffff;
+
+    box-shadow: 0 0 15px rgba(0,255,255,0.5);
+}
+
+/* Bottoni futuristici */
+button {
+    background: linear-gradient(90deg, #00ffff, #2563eb);
+    border: none;
+
+    color: white;
+    font-weight: bold;
+
+    padding: 12px 22px;
+    margin: 10px 5px;
+
+    border-radius: 10px;
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow: 0 0 15px rgba(0,255,255,0.3);
+}
+
+button:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 20px rgba(0,255,255,0.6),
+        0 0 40px rgba(0,255,255,0.4);
+}
+
+/* Pulsanti link */
+#btn-left,
+#btn-right {
+    text-decoration: none;
+
+    background: linear-gradient(90deg, #111827, #1e3a8a);
+    color: #00ffff;
+
+    border: 1px solid rgba(0,255,255,0.2);
+
+    padding: 12px 20px;
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+#btn-left:hover,
+#btn-right:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 0 20px rgba(0,255,255,0.4);
+
+    color: white;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between; /* btn-left a sinistra, btn-right a destra */
+    margin: 20px 0;
+}
+
 #btn-left, #btn-right {
     font-weight: bold;
     background-color: #ffffff;
-    color: #1a1a2e;
+    color: #ffffff;
     padding: 10px 20px;
     margin-left: 10px;
     margin-right: 10px;

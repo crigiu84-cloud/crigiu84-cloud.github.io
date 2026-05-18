@@ -1,131 +1,297 @@
-/* 1. RESET GENERALE */
+/* =========================
+   1. RESET GENERALE
+========================= */
 * {
-    /* Include padding e bordi nel calcolo della larghezza per evitare che gli elementi escano fuori */
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body {
-    /* Font standard e colori leggibili */
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
 }
 
-/* 2. NAVIGAZIONE CON FLEXBOX */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #050816, #0b1120, #111827);
+    background-size: 400% 400%;
+    animation: sfondoAnimato 15s ease infinite;
+    color: #e5e7eb;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Animazione sfondo */
+@keyframes sfondoAnimato {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =========================
+   2. NAVBAR
+========================= */
 #nav-principale {
-    background-color: #1a1a2e; /* Colore scuro per la barra */
+    background: rgba(10, 15, 30, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
     padding: 15px 0;
-    
-    /* Proprietà per il blocco della barra */
+
     position: sticky;
     top: 0;
-    z-index: 1000; /* Assicura che la barra resti "sopra" gli altri contenuti */
+    z-index: 1000;
+
+    box-shadow: 0 0 20px rgba(0,255,255,0.1);
 }
 
 #nav-principale ul {
-    display: flex;             /* Attiva Flexbox per mettere i link in riga */
-    justify-content: center;   /* Centra i link orizzontalmente */
-    list-style: none;          /* Toglie i pallini della lista */
+    display: flex;
+    justify-content: center;
+    list-style: none;
 }
 
 #nav-principale li {
-    margin: 0 15px;            /* Crea spazio a destra e sinistra di ogni link */
+    margin: 0 20px;
 }
 
 .nav-link {
-    color: white;
-    text-decoration: none;     /* Toglie la sottolineatura blu */
+    position: relative;
+    color: #e5e7eb;
+    text-decoration: none;
     font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
 }
 
-/* Pseudo-classe :hover per cambiare colore al passaggio del mouse */
+/* Linea animata sotto */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #00ffff;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #00ffff;
+}
+
 .nav-link:hover {
-    color: #38bdf8;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
 }
 
-/* 3. HERO SECTION */
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   3. HERO SECTION
+========================= */
 .hero {
-    background-color: #1a1a2e;
-    color: white;
-    padding: 50px 20px;
     text-align: center;
+    padding: 120px 20px;
+    position: relative;
 }
 
-/* 4. LAYOUT DELLE SEZIONI */
+/* Glow dietro */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(0,255,255,0.15);
+    border-radius: 50%;
+    filter: blur(100px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #00ffff;
+    text-shadow: 0 0 20px #00ffff;
+    animation: glow 2s infinite alternate;
+}
+
+.hero p {
+    margin-top: 15px;
+    color: #cbd5e1;
+    font-size: 1.1rem;
+}
+
+/* Effetto neon */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #00ffff;
+    }
+    to {
+        text-shadow: 0 0 25px #00ffff, 0 0 40px #00ffff;
+    }
+}
+
+/* =========================
+   4. SEZIONI
+========================= */
 .sezione {
-    max-width: 900px;          /* Limita la larghezza massima del contenuto */
-    margin: 30px auto;         /* Centra la sezione e distanzia dalle altre */
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;        /* Arrotonda gli angoli */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Aggiunge un'ombra leggera */
+    max-width: 950px;
+    margin: 40px auto;
+    padding: 30px;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 0 20px rgba(0,255,255,0.08),
+        0 0 50px rgba(0,0,0,0.4);
+
+    transition: 0.4s ease;
 }
 
-/* 5. SISTEMA GRID PER I PROGETTI (DUE COLONNE) */
+/* Hover figo */
+.sezione:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 0 25px rgba(0,255,255,0.2),
+        0 0 60px rgba(0,0,0,0.5);
+}
+
+/* =========================
+   5. GRID PROGETTI
+========================= */
 .progetti-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* due colonne */
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
 }
 
 .card {
-    background-color: #fafafa;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 6px;
+    background: linear-gradient(145deg, #111827, #1e293b);
+    border: 1px solid rgba(0,255,255,0.15);
+
+    padding: 25px;
+    border-radius: 15px;
+
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Pseudo-classe per dare un colore diverso al titolo della prima card */
-.card:first-child h3 {
-    color: #2e75b6;
+/* Effetto luce animata */
+.card::before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(0,255,255,0.2),
+        transparent
+    );
+
+    top: -100%;
+    left: -100%;
+    transform: rotate(25deg);
+    transition: 0.7s;
 }
 
-/* 6. COMPETENZE E LISTE */
+.card:hover::before {
+    top: 100%;
+    left: 100%;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    border-color: #00ffff;
+    box-shadow: 0 0 25px rgba(0,255,255,0.3);
+}
+
+.card h3 {
+    color: #00ffff;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   6. COMPETENZE
+========================= */
 .lista-competenze {
     list-style: none;
 }
 
-/* Pseudo-elemento ::before per aggiungere un simbolo personalizzato */
+.lista-competenze li {
+    margin: 12px 0;
+    transition: 0.3s;
+}
+
+.lista-competenze li:hover {
+    transform: translateX(10px);
+    color: #00ffff;
+}
+
 .lista-competenze li::before {
-    content: "✓ ";             /* Aggiunge una spunta prima di ogni competenza */
-    color: #2e75b6;
-    font-weight: bold;
+    content: "💻 ";
+    color: #00ffff;
 }
 
-/* 7. PULSANTI E LINK */
+/* =========================
+   7. BOTTONI
+========================= */
 .btn-small {
-    display: inline-block; /*Gli elementi stanno in riga, ma col block posso dargli anche ad esempio larghezza, margine ecc.. */
-    margin-top: 10px;
-    color: #2e75b6;
-    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+
+    background: linear-gradient(90deg, #00ffff, #2563eb);
+    color: white;
+
+    border-radius: 10px;
     text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(0,255,255,0.3);
 }
 
-/* 9. STILE FAQ (Accordion) */
+.btn-small:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(0,255,255,0.6);
+}
+
+/* =========================
+   8. FAQ
+========================= */
 .faq-item {
-    background-color: #fafafa;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    margin-bottom: 10px;
-    padding: 15px;
-    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,255,255,0.1);
+
+    border-radius: 12px;
+    margin-bottom: 15px;
+    padding: 18px;
+
+    transition: 0.3s;
+}
+
+.faq-item:hover {
+    border-color: #00ffff;
+    box-shadow: 0 0 15px rgba(0,255,255,0.15);
 }
 
 .faq-item summary {
     font-weight: bold;
     cursor: pointer;
-    color: #1a1a2e;
-    list-style: none; /* Rimuove il triangolino di default su alcuni browser */
+    color: #00ffff;
+    list-style: none;
 }
 
-/* Aggiunge un indicatore personalizzato (+) */
 .faq-item summary::after {
     content: " +";
     float: right;
-    color: #2e75b6;
 }
 
 .faq-item[open] summary::after {
@@ -133,74 +299,95 @@ body {
 }
 
 .faq-item p {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid #eee;
-    color: #555;
+    margin-top: 12px;
+    color: #d1d5db;
 }
 
-/* 10. STILE FOOTER */
+/* =========================
+   9. FOOTER
+========================= */
 .footer-principale {
-    background-color: #1a1a2e;
+    background: rgba(5,10,20,0.9);
+    border-top: 1px solid rgba(0,255,255,0.1);
+
     color: white;
     text-align: center;
-    padding: 30px 20px;
-    margin-top: 40px;
+
+    padding: 35px 20px;
+    margin-top: 50px;
 }
 
 .footer-principale a {
-    color: #38bdf8;
+    color: #00ffff;
     text-decoration: none;
-    font-weight: bold;
+    transition: 0.3s;
 }
 
 .footer-principale a:hover {
-    text-decoration: underline;
+    text-shadow: 0 0 10px #00ffff;
 }
 
-/* 8. MEDIA QUERIES PER IL RESPONSIVE */
+/* =========================
+   10. ANIMAZIONE ENTRATA
+========================= */
+.sezione,
+.card,
+.hero {
+    animation: fadeUp 1s ease;
+}
 
-/* --- TABLET (Schermi medi, fino a 900px) --- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   11. RESPONSIVE
+========================= */
+
+/* Tablet */
 @media (max-width: 900px) {
     .sezione {
-        margin: 20px 15px; /* Margini più stretti per sfruttare lo spazio */
-        padding: 15px;
+        margin: 20px 15px;
+        padding: 20px;
     }
-    
+
     .progetti-grid {
-        grid-template-columns: 1fr 1fr; /* Mantiene 2 colonne, ma riduce un po' gli spazi */
         gap: 15px;
     }
 }
 
-/* --- SMARTPHONE (Schermi piccoli, fino a 600px) --- */
+/* Smartphone */
 @media (max-width: 600px) {
-    /* Layout Hero più compatto */
+
     .hero {
-        padding: 40px 15px;
+        padding: 80px 15px;
     }
-    
+
     .hero h1 {
-        font-size: 1.5rem; /* Riduciamo leggermente il titolo */
+        font-size: 2rem;
     }
 
     #nav-principale ul {
-        flex-direction: row;      /* Forza la riga */
-        flex-wrap: wrap;          /* Permette di andare a capo se manca spazio */
-        justify-content: center;  /* Tiene i link centrati */
-        gap: 5px 15px;            /* Spazio verticale e orizzontale tra i link */
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
     #nav-principale li {
-        margin: 0;                /* Resettiamo il margine per usare il gap sopra */
+        margin: 0;
     }
 
-    /* Griglia progetti: 1 sola colonna */
     .progetti-grid {
         grid-template-columns: 1fr;
     }
 
-    /* Sezioni più snelle */
     .sezione {
         margin: 15px 10px;
     }
